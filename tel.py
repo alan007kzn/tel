@@ -175,7 +175,7 @@ def text_event(message):
 if __name__ == '__main__':
     server_url = os.getenv("RENDER_EXTERNAL_URL")
     if server_url and API_TOKEN:
-        webhook.url = f"{server_url.rstrip('/')}/{API_TOKEN}"
+        webhook_url = f"{server_url.rstrip('/')}/{API_TOKEN}"
 
         try:
             r = requests.get(f"https://api.telegram.org/bot{API_TOKEN}/setWebhook",
